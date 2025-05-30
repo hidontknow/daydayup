@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>1_类的基本知识</title>
+    </head>
+    <body>
+        <script type="text/javascript">
+            // 创建一个Person类
+            class Person {
+                // 类的构造函数
+                constructor(name, age) {
+                    // 在构造函数中可以初始化实例属性
+                    this.name = name || '张三'; // 如果没有传入name参数，则默认值为'张三'
+                    this.age = age || 18; // 如果没有传入age参数，则默认值为18
+                }
+
+                // 类的方法
+                sayHello() {
+                    console.log(`你好，我是${this.name}，今年${this.age}岁。`);
+                }
+            }
+            // 创建一个Student类，继承自Person类
+            class Student extends Person {
+                constructor(name, age, grade) {
+                    // 调用父类的构造函数
+                    super(name, age);
+                    this.grade = grade || '一年级'; // 如果没有传入grade参数，则默认值为'一年级'
+                }
+
+                // 重写父类的方法
+                sayHello() {
+                    console.log(`你好，我是${this.name}，今年${this.age}岁，读${this.grade}。`);
+                }
+            }
+
+
+            // 创建一个Person类的实例对象
+            const p1 = new Person('李四', 25);
+            const p2 = new Person(); // 使用默认值创建实例
+
+            console.log(p1); // Person {}
+            console.log(p2); // Person {}
+            p1.sayHello(); // 你好，我是李四，今年25岁。
+            p2.sayHello(); // 你好，我是张三，今年18岁。
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高阶函数_函数柯里化</title>
+</head>
+<body>
+<!-- 准备好一个容器 -->
+<div id="test"></div>
+<!-- 引入react核心库 -->
+<script type="text/javascript" src="../js/react.development.js"></script>
+<!-- 引入react-dom -->
+<script type="text/javascript" src="../js/react-dom.development.js"></script>
+<!-- 引入babel，用于将jsx转换为js -->
+<script type="text/javascript" src="../js/babel.min.js"></script>
+<!-- 引入prop-types, 用于对组件标签属性进行限制 -->
+<script type="text/javascript" src="../js/prop-types.js"></script>
+<!-- 使用babel将jsx转换为js -->
+<script type="text/babel">
+    //#region
+    /*
+        高阶函数：如果一个函数符合下面2个规范中的任何一个，那该函数就是高阶函数。
+            1.若A函数，接收的参数是一个函数，那么A就可以称之为高阶函数。
+            2.若A函数，调用的返回值依然是一个函数，那么A就可以称之为高阶函数。
+            常见的高阶函数有：Promise、setTimeout、arr.map（）等等
+        函数的柯里化：通过函数调用继续返回函数的方式，实现多次接收参数最后统一处理的函数编码形式。
+     */
+    //#endregion
+
+
+    //创建组件
+    class Login extends React.Component {
+        state = {
+            username: '',
+            password: ''
+        }
+
+        // 使用柯里化的方式保存表单数据
+        saveFormData = (type) => {
+            return (event) => {
+                this.setState({
+                    [type]: event.target.value
+                })
+            }
+        }
+        //  不使用柯里化的方式保存表单数据
+        saveFormData2 = (type, event) => {
+            this.setState({
+                [type]: event.target.value
+            })
+        }
+
+        handleSubmit = (event) => {
+            event.preventDefault(); // 阻止表单默认提交行为
+            const {username,password} = this.state;
+            alert(username + ':' + password)
+
+        };
+
+        render() {
+            return (
+                <form action="https://www.baidu.com" method="get" onSubmit={this.handleSubmit}>
+                    <label>
+                        用户名：<input onChange={this.saveFormData('username')} type="text" name="username" placeholder="请输入用户名"/>
+                    </label>
+                    <br/>
+                    <label>
+                        密码：<input onChange={(event) => this.saveFormData2('password', event)} type="password" name="password" placeholder="请输入密码"/>
+                    </label>
+                    <br/>
+                    <button type="submit">登录</button>
+                </form>
+            );
+        }
+    }
+    //渲染组件
+    ReactDOM.render(
+        <Login />,
+        document.getElementById('test')
+    );
+</script>
+
+</body>
+</html>

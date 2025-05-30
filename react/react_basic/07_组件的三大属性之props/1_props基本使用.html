@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>1_props基本使用</title>
+    </head>
+    <body>
+        <!-- 准备好一个容器 -->
+        <div id="test1"></div>
+        <div id="test2"></div>
+        <div id="test3"></div>
+        <!-- 引入react核心库 -->
+        <script type="text/javascript" src="../js/react.development.js"></script>
+        <!-- 引入react-dom -->
+        <script type="text/javascript" src="../js/react-dom.development.js"></script>
+        <!-- 引入babel，用于将jsx转换为js -->
+        <script type="text/javascript" src="../js/babel.min.js"></script>
+
+        <!-- 使用babel将jsx转换为js -->
+        <script type="text/babel">
+            //创建组件
+            class Person extends React.Component {
+                render() {
+                    console.log(this)
+                    const {name,sex,age} = this.props
+                    return (
+                        <ul>
+                            <li>姓名：{name}</li>
+                            <li>性别：{sex}</li>
+                            <li>年龄：{age}</li>
+                        </ul>
+                    );
+                }
+            }
+
+            //渲染组件到页面
+            ReactDOM.render(
+                <Person name="tom" age="18" sex="女"/>,
+                document.getElementById('test1')
+            );
+
+            const p = {name:'老六',age:18,sex:'男'}
+            ReactDOM.render(
+                <Person {...p}/>, //使用对象展开运算符
+                document.getElementById('test2')
+            );
+        </script>
+        
+    </body>
+</html>

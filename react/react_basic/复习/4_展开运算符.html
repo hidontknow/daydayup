@@ -1,0 +1,45 @@
+<!--
+ * @Author: hidontknow hidontknowmore@gmail.com
+ * @Date: 2025-05-28 18:54:39
+ * @LastEditors: hidontknow hidontknowmore@gmail.com
+ * @LastEditTime: 2025-05-28 19:10:18
+ * @FilePath: \react_basic\复习\4_展开运算符.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>4_展开运算符</title>
+    </head>
+
+    <body>
+        <script type="text/javascript">
+            let arr1 = [1, 2, 3, 4, 5];
+            let arr2 = [6, 7, 8, 9, 10];
+            console.log(arr1); // [1, 2, 3, 4, 5]
+            console.log(...arr1) // 1 2 3 4 5
+            console.log(arr2); // [6, 7, 8, 9, 10]
+            let arr3 = [...arr1, ...arr2];
+            console.log(arr3); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+            function sum(...args) {
+                return args.reduce((acc, cur) => acc + cur, 0);
+            }
+            console.log(sum(...arr3)); // 55
+
+            let person = {name:'tom',age:18}
+            let person2 = {...person}
+            person.name = 'jerry'
+            console.log(person2); // {name: 'tom', age: 18}
+            console.log(person); // {name: 'jerry', age: 18}
+            let person3 = {...person, name:'jack'}
+            console.log(person3); // {name: 'jack', age: 18}
+            let person4 = {...person, name:'jack', addr: "beijing"}
+            console.log(person4); // {name: 'jack', age: 18, addr: 'beijing'}
+
+        </script>
+
+    </body>
+</html>

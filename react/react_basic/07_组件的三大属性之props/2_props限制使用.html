@@ -1,0 +1,76 @@
+<!--
+ * @Author: hidontknow hidontknowmore@gmail.com
+ * @Date: 2025-05-28 19:13:18
+ * @LastEditors: hidontknow hidontknowmore@gmail.com
+ * @LastEditTime: 2025-05-28 19:27:16
+ * @FilePath: \react_basic\07_组件的三大属性之props\2_props限制使用.html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>1_props基本使用</title>
+    </head>
+    <body>
+        <!-- 准备好一个容器 -->
+        <div id="test1"></div>
+        <div id="test2"></div>
+        <div id="test3"></div>
+        <!-- 引入react核心库 -->
+        <script type="text/javascript" src="../js/react.development.js"></script>
+        <!-- 引入react-dom -->
+        <script type="text/javascript" src="../js/react-dom.development.js"></script>
+        <!-- 引入babel，用于将jsx转换为js -->
+        <script type="text/javascript" src="../js/babel.min.js"></script>
+        <!-- 引入prop-types, 用于对组件标签属性进行限制 -->
+        <script type="text/javascript" src="../js/prop-types.js"></script>
+
+        <!-- 使用babel将jsx转换为js -->
+        <script type="text/babel">
+            //创建组件
+            class Person extends React.Component {
+                render() {
+                    console.log(this)
+                    const {name,sex,age} = this.props
+                    return (
+                        <ul>
+                            <li>姓名：{name}</li>
+                            <li>性别：{sex}</li>
+                            <li>年龄：{age}</li>
+                        </ul>
+                    );
+                }
+            }
+            Person.propTypes = {
+                name: PropTypes.string.isRequired, //姓名必须是字符串类型且必填
+                sex: PropTypes.string, //性别必须是字符串类型
+                age: PropTypes.number, //年龄必须是数字类型
+                speak: PropTypes.func //speak必须是函数类型
+            }
+            Person.defaultProps = {
+                sex: '不男不女',
+                age: 18           
+            }
+
+
+            function speak() {
+                console.log('说话了');
+            }
+
+            //渲染组件到页面
+            ReactDOM.render(
+                <Person name='tom' sex="女" speak={speak}/>,
+                document.getElementById('test1')
+            );
+
+            const p = {name:'老六',age:18,sex:'男'}
+            ReactDOM.render(
+                <Person {...p}/>, //使用对象展开运算符
+                document.getElementById('test2')
+            );
+        </script>
+        
+    </body>
+</html>

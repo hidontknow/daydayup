@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>3_虚拟DOM和真实DOM</title>
+        <style>
+            .title {
+                background-color: orange;
+                width: 400px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- 准备好一个容器 -->
+        <div id="test"></div>
+        <!-- 引入react核心库 -->
+        <script type="text/javascript" src="../js/react.development.js"></script>
+        <!-- 引入react-dom -->
+        <script type="text/javascript" src="../js/react-dom.development.js"></script>
+        <!-- 引入babel，用于将jsx转换为js -->
+        <script type="text/javascript" src="../js/babel.min.js"></script>
+
+        <!-- 使用babel将jsx转换为js -->
+        <script type="text/babel">
+            const myId = 'atguiGu'
+            const myData = 'I love React'
+
+            // 1. 创建虚拟DOM
+            const VDOM = (
+                <div>
+                    <h2 className="title" id={myId.toLowerCase()}>
+                        <span style={{color: 'white', fontSize: '40px'}}>{myData.toLowerCase()}</span>
+                    </h2>
+                    <h2 className="title" id={myId.toUpperCase()}>
+                        <span style={{color: 'white', fontSize: '40px'}}>{myData.toLowerCase()}</span>
+                    </h2>
+                    <input type="text" />
+                    <Good>123</Good>
+                </div>
+            )
+            
+            // 2. 渲染虚拟DOM到页面
+            ReactDOM.render(VDOM, document.getElementById('test'));
+
+            /* 
+                jsx语法规则：
+                1. 定义虚拟DOM时，不要写引号
+                2. 标签中混入JS表达式时，要用{}
+                3. 样式的类名指定不要用class，要用className
+                4. 内联样式，要用style={{key: value}}的形式去写
+                5. 只有一个根标签
+                6. 标签必须闭合
+                7. 标签首字母
+                    (1)若小写字母开头，则将该标签转换为html同名元素，若html中没有该标签，则报错
+                    (2)若大写字母开头，则将该标签转换为自定义组件，若组件不存在，则报错
+             */
+            
+        </script>
+        
+    </body>
+</html>
