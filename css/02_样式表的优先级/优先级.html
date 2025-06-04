@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>优先级</title>
+    <!-- 内部样式优先级等于外部样式, 后面的会覆盖前面 -->
+    <style>
+        h1 {
+            color: green;
+            font-size: 80px;
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- 行内样式优先级最高 -->
+    <!-- <h1 style="color: red; font-size: 80px; text-align: center;">欢迎来到尚硅谷学习</h1> -->
+    <h1>欢迎来到尚硅谷学习</h1>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>选择器优先级_详细聊</title>
+    <style>
+        #atguigu {
+            color: blue;
+        }
+        .slogan {
+            color: green;
+        }
+        .container span.slogan {
+            color: red;
+        }
+        div>p>span:nth-child(1) {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p> 
+            <span class="slogan" id="atguigu" style="color: blue;">尚硅谷, 让天下没有难学的技术!</span>
+            <span>欢迎同学们来学习!</span>
+        </p>
+    </div>
+</body>
+</html>

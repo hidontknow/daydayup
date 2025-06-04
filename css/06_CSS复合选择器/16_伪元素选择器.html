@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>16_伪元素选择器</title>
+    <style>
+        /* 选中div的第一个字母 */
+        div::first-letter {
+            color: red;
+            font-size: 30px;
+        }
+        /* 选中div的第一个行 */
+        div::first-line {
+            background-color: yellow;
+        }
+
+        div::selection {
+            background-color: green; /* 选中div的文本时，背景颜色变为绿色 */
+            color: white; /* 选中div的文本时，文字颜色变为白色 */
+        }
+        input::placeholder {
+            color: blue; /* 输入框的占位符文字颜色变为蓝色 */
+            font-style: italic; /* 输入框的占位符文字变为斜体 */
+        }
+        p::before {
+            content: "¥"; /* 在p元素前添加内容 */
+            color: orange; /* 设置颜色为橙色 */
+        }
+        p::after {
+            content: "元"; /* 在p元素后添加内容 */
+            color: orange; /* 设置颜色为橙色 */
+        }
+    </style>
+</head>
+<body>
+    <div>尚硅谷</div>
+    <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus ad et ullam maxime aspernatur iure asperiores explicabo voluptate nostrum, cumque veniam ea ducimus libero officia architecto a impedit! Tempora laudantium modi a quasi saepe odit quam eum delectus magni totam excepturi, illum nam necessitatibus eveniet, libero velit error dolore! Qui recusandae aliquam corrupti magni sequi sapiente, laborum molestias asperiores id.</div>
+    <br>
+    <input type="text" placeholder="请输入用户名">
+    <p>199.00</p>
+    <p>299.00</p>
+    <p>399.00</p>
+    <p>499.00</p>
+</body>
+</html>

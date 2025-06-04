@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13_伪类选择器_UI伪类</title>
+    <style>
+        /* 选中的是勾选的复选框 */
+        input:checked {
+            width: 50px;
+            height: 50px;
+        }
+        input:enabled {
+            background-color: lightgreen; /* 启用状态的输入框背景色为浅绿色 */
+        }
+        input:disabled {
+            background-color: lightgray; /* 禁用状态的输入框背景色为浅灰色 */
+        }
+    </style>
+</head>
+<body>
+    <input type="checkbox">
+    <input type="radio" name="gender">
+    <input type="radio" name="gender">
+    <input type="text">
+    <input type="text" disabled>
+</body>
+</html>
