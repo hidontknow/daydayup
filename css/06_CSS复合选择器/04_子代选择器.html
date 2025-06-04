@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04_子代选择器</title>
+    <style>
+        div > a {
+            color: red; /* 设置直接子元素a的文字颜色为红色 */
+            font-size: 20px; /* 设置直接子元素a的字体大小为20像素 */
+            text-decoration: none; /* 去掉链接的下划线 */
+        }
+        div > p > a {
+            color: skyblue; /* 设置子元素p下的a的文字颜色为蓝色 */
+            font-size: 18px; /* 设置子元素p下的a的字体大小为18像素 */
+            text-decoration: underline; /* 给子元素p下的a添加下划线 */
+        }
+        .foot > a {
+            color: green; /* 设置类名为foot的div下的a的文字颜色为绿色 */
+            font-size: 16px; /* 设置类名为foot的div下的a的字体大小为16像素 */
+            text-decoration: none; /* 去掉类名为foot的div下的a的下划线 */
+        }
+        div.foot > a {
+            color: purple; /* 设置类名为foot的div下的a的文字颜色为紫色 */
+            font-size: 14px; /* 设置类名为foot的div下的a的字体大小为14像素 */
+            text-decoration: none; /* 去掉类名为foot的div下的a的下划线 */
+        }
+        div .foot > a {
+            color: orange; /* 设置div下的类名为foot的div下的a的文字颜色为橙色 */
+            font-size: 12px; /* 设置div下的类名为foot的div下的a的字体大小为12像素 */
+            text-decoration: none; /* 去掉div下的类名为foot的div下的a的下划线 */
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <a href="#">张三</a>
+        <a href="#">李四</a>
+        <a href="#">王五</a>
+        <p>
+            <a href="#">赵六</a>
+            <div class="foot">
+                <a href="#">孙七</a>
+            </div>  
+        </p>
+        
+    </div>
+</body>
+</html>

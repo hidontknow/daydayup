@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12_伪类选择器_否定伪类</title>
+    <style>
+        /* 选中div下的所有p元素，且这些p元素不包含类名为fail */
+        /* div>p:not(.fail) {
+            color: green; 
+        } */
+        
+        /* 选中div下的所有p元素，且这些p元素不包含title属性值以"你要加油啊!"开头的 */
+        div>p:not([title^="你要加油啊!"]) {
+            color: red; 
+        }  
+
+        /* 选中div下的所有p元素，且这些p元素不是第一个子元素 */
+        div>p:not(:first-child) {
+            color: blue; 
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>张三:90分</p>
+        <p>李四:80分</p>
+        <p>王五:70分</p>
+        <p>赵六:60分</p>
+        <p class="fail" title="你要加油啊! 孙七">孙七:50分</p>
+        <p class="fail" title="你要加油啊! 老八">老八:40分</p>
+    </div>
+</body>
+</html>

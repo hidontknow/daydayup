@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>07_伪类选择器_概念</title>
+    <style>
+        /* 伪类选择器 */
+        a:link {
+            color: blue; /* 未访问链接的文字颜色为蓝色 */
+        }
+        a:visited {
+            color: green; /* 已访问链接的文字颜色变为绿色 */
+        }
+        a:hover {
+            color: red; /* 鼠标悬停时链接的文字颜色变为红色 */
+        }
+        a:active {
+            color: orange; /* 鼠标点击时链接的文字颜色变为橙色 */
+        }
+        span:hover {
+            color: purple; /* 鼠标悬停时span的文字颜色变为紫色 */
+        }
+        span:active {
+            color: pink; /* 鼠标点击时span的文字颜色变为粉色 */
+        }
+
+        /* 获取焦点 */
+        input:focus,
+        select:focus {
+            color: orange;
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.baidu.com">去百度</a>
+    <a href="https://www.jd.com">去京东</a>
+    <span>尚硅谷</span>
+    <br>
+    <input type="text">
+    <br>
+    <input type="text">
+    <br>
+    <input type="text">
+    <select>
+        <option value="1">选项1</option>
+        <option value="2">选项2</option>
+        <option value="3">选项3</option>
+        <option value="4">选项4</option>
+    </select>
+</body>
+</html>

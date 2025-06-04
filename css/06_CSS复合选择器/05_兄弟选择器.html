@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05_兄弟选择器</title>
+    <style>
+        /* 选中div后紧紧相邻的兄弟元素p - 相邻兄弟选择器 */
+        div+p {
+            color: red; /* 设置兄弟元素p的文字颜色为红色 */
+            font-size: 20px; /* 设置兄弟元素p的字体大小为20像素 */
+            text-align: center; /* 设置兄弟元素p的文本居中对齐 */
+        }
+        /* 选中div后所有兄弟元素p - 全部兄弟选择器 */
+        div~p {
+            color: blue; /* 设置所有兄弟元素p的文字颜色为蓝色 */
+            font-size: 18px; /* 设置所有兄弟元素p的字体大小为18像素 */
+            text-decoration: underline; /* 给所有兄弟元素p添加下划线 */
+        }
+        li+li {
+            color: green; /* 设置紧接着的兄弟元素li的文字颜色为绿色 */
+        }
+        li~li {
+            color: purple; /* 设置所有兄弟元素li的文字颜色为紫色 */
+        }
+    </style>
+</head>
+<body>
+    <p>front-end</p>
+    <div>尚硅谷</div>
+    <p>front-end</p>
+    <p>java</p>
+    <p>big data</p>
+    <p>ui</p>
+    <ul>
+        <li>主页</li>
+        <li>秒杀</li>
+        <li>订单</li>
+        <li>帮助</li>
+    </ul>
+</body>
+</html>

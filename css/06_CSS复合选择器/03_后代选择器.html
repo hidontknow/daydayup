@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>03_后代选择器</title>
+    <style>
+        ul li {
+            color: red;
+            font-size: 30px;
+        }
+        ol li {
+            color: blue;
+            font-size: 20px;
+        }
+        ul li a {
+            color: green;
+            font-size: 25px;
+        }
+        ol li a {
+            color: purple;
+            font-size: 15px;
+        }
+        .subject li {
+            color: chocolate;
+            font-size: 25px;
+        }
+        .subject li.front-end {
+            color: orange;
+            font-size: 25px;
+        }
+        .subject div.front-end {
+            color: pink;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>抽烟</li>
+        <li>喝酒</li>
+        <li>
+            <a href="#">烫头</a>
+        </li>
+    </ul>
+    <hr>
+    <ol>
+        <li>张三</li>
+        <li>李四</li>
+        <li>
+            <a href="#">王五</a>
+        </li>
+    </ol>
+    <hr>
+    <ol class="subject">
+        <li class="front-end">前端</li>
+        <div class="front-end">学号前端,挂帅杨帆!</div>
+        <li>JAVA</li>
+        <li>大数据</li>
+        <li>UI</li>
+    </ol>
+</body>
+</html>

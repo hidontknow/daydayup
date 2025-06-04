@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11_伪类选择器_结构伪类_3</title>
+    <style>
+        div>p:nth-last-child(3) {
+            color: red; /* 选中div的第三个子p元素 */
+        }
+
+        div>p:nth-last-of-type(3) {
+            color: blue; /* 选中div的第三个p元素 */
+        }
+
+        span:only-child {
+            color: green; /* 选中span元素,且span是其父元素的唯一子元素 */
+        }
+
+        span:only-of-type {
+            color: orange; /* 选中span元素,且span是其父元素的唯一子元素 */
+        }
+
+        :root {
+            background-color: #3498db; /* 定义一个CSS变量 */
+        }
+
+        div:empty {
+            width: 100px;
+            height: 100px;
+            background-color: purple; /* 选中空的div元素 */
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <span>测试3</span>
+    </div>
+    <div>
+        <span>测试1</span>
+        <p>张三:90分</p>
+        <p>李四:80分</p>
+        <p>王五:70分</p>
+        <p>赵六:60分</p>
+        <p>小明:50分</p>
+        <p>小红:40分</p>
+        <p>小刚:30分</p>
+        <span>测试2</span>
+    </div>
+
+    <div></div>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06_属性选择器</title>
+    <style>
+        /* 第一种写法:选中具有指定属性的元素 */
+        [title] {
+            color: red;
+        }
+        /* 第二种写法:选中指定属性值为指定值的元素 */
+        [title="atguigu1"] {
+            color: green;
+        }
+        /* 第三种写法:选中指定属性值以指定值开头的元素 */
+        [title^="a"] {
+            color: blue;
+        }
+        /* 第四种写法:选中指定属性值以指定值结尾的元素 */
+        [title$="1"] {
+            color: orange;
+        }
+        /* 第五种写法:选中指定属性值包含指定值的元素 */
+        [title*="guigu"] {
+            color: purple;
+        }
+    </style>
+</head>
+<body>
+    <div title="atguigu1">尚硅谷1</div>
+    <div title="atguigu2">尚硅谷2</div>
+    <div title="guigu3">尚硅谷3</div>
+    <div title="guigu4">尚硅谷4</div>
+</body>
+</html>

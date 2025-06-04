@@ -1,0 +1,18 @@
+h1 {
+    color: red;
+    font-size: 80px;
+    text-align: center;
+}
+h2 {
+    color: blue;
+    font-size: 50px;
+    text-align: center;
+}
+p {
+    color: green;
+    font-size: 30px;
+    text-align: center;
+}
+img {
+    width: 300px;
+}
