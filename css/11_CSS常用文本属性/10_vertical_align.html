@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10_vertical_align</title>
+    <style>
+        div {
+            font-size: 100px;
+            background-color: skyblue;
+            height: 300px;
+        }
+        span {
+            font-size: 40px;
+            background-color: yellow;
+            vertical-align: middle;
+        }
+        img {
+            height: 150px;
+            vertical-align: bottom;
+        }
+        .san {
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        atguigu尚硅谷x<span>x前端</span>
+    </div>
+    <hr>
+    <div>
+        atguigu尚硅谷x<img src="../images/wm.jpg">
+    </div>
+    <hr>
+    <table border="1" cellspacing="0">
+        <caption>人员信息</caption>
+        <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr height="200">
+                <td class="san">张三</td>
+                <td>25</td>
+                <td>男</td>
+            </tr>
+            <tr>
+                <td>李四</td>
+                <td>30</td>
+                <td>女</td>
+            </tr>
+            <tr>
+                <td>王五</td>
+                <td>28</td>
+                <td>男</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

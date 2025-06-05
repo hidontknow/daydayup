@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_解决浮动后的影响</title>
+    <style>
+        .outer {
+            width: 500px;
+            background-color: lightblue;
+            border: 1px solid black;
+            /* 第一种解决方案-不推荐 */
+            /* height: 122px; */
+            /* 第二种解决方案-不推荐 */
+            /* float: left; */
+            /* 第三种解决方案-不完美 */
+            /* overflow: scroll;  */
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightcoral;
+            border: 1px solid black;
+            margin: 10px;
+        }
+
+        .box1, .box2, .box3, .box4 {
+            float: left;
+        }
+        .mofa {
+            /* 第四种解决方案 */
+            clear: both;
+        }
+        /* 第五种解决方案 */
+        .outer::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <!-- <div class="box box0">0</div> -->
+        <div class="box box1">1</div>
+        <div class="box box2">2</div>
+        <div class="box box3">3</div>
+        <div class="box box4">4</div>
+        <!-- <div class="box box5">5</div> -->
+        <!-- <div class="mofa"></div> -->
+    </div>
+    <div style="background-color: orange;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, voluptate vitae. Aliquid, reiciendis voluptatem culpa ut molestiae eius. Nostrum laudantium similique ratione aut iste quia ducimus, dolore deserunt natus! Beatae eveniet praesentium inventore error, minima totam dignissimos quia omnis expedita. Dolores, asperiores harum rerum nostrum ducimus aliquid! Quos illum in vel cupiditate assumenda distinctio ipsum minus tenetur totam, delectus magnam consequatur, quo natus eum dignissimos eaque fugit ipsa a fuga molestias necessitatibus perspiciatis. Exercitationem consectetur, nihil libero laudantium sapiente qui, quo quos eius suscipit eveniet voluptas odit voluptatum nobis enim ad dicta, ipsum modi repellendus animi? Vero consectetur, nisi eius excepturi, error architecto aliquam totam sed iure maxime a, neque quod in? Ut dignissimos quis molestiae est sapiente! Eius unde quod repudiandae sit labore odit ipsum molestias ex, nulla maxime nostrum a quam laborum sapiente. Quibusdam fugit temporibus, inventore, dolores repellendus rerum illo aperiam dicta commodi accusantium molestiae eum, numquam sapiente consectetur modi dolore. Accusantium similique nemo consectetur! Numquam, eaque voluptatem, qui, veniam sequi excepturi animi praesentium quidem soluta possimus alias. Ab earum veniam impedit sed quisquam laudantium esse hic nam consequatur quaerat exercitationem distinctio nisi tempora tempore accusantium nemo qui et ullam doloribus animi, veritatis deserunt. Dolorem, dignissimos vitae.</div>
+</body>
+</html>
