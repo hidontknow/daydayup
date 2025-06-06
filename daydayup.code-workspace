@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "arco"
+		},
+		{
+			"path": "css"
+		},
+		{
+			"path": "react"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "css",
+		"liveServer.settings.port": 5501
+	}
+}
